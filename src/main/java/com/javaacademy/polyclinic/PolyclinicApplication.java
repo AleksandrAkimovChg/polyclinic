@@ -8,13 +8,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class PolyclinicApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(TaxiApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(PolyclinicApplication.class, args);
 		Clinic clinic = context.getBean(Clinic.class);
 		clinic.dentistHeal();
 		clinic.therapistHeal();
 		clinic.juniorSurgeonHeal();
 		clinic.seniorSurgeonHeal();
-		clinic.printStatistics();
-
+		Cashes cashes = context.getBean(Cashes.class);
+		cashes.printProfit();
 	}
 }

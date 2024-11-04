@@ -16,5 +16,4 @@ public class Doctor {
         log.info("{} вылечил человека", specialization);
         return price;
     }
-
 }

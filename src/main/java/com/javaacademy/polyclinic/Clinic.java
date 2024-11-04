@@ -1,34 +1,49 @@
 package com.javaacademy.polyclinic;
 
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
-@NoArgsConstructor
 public class Clinic {
-    private Casher casher;
+    private Cashes cashes;
     private Doctor dentist;
     private Doctor therapist;
     private Doctor juniorSurgeon;
     private Doctor seniorSurgeon;
 
+    public Clinic(@Qualifier("cashes") Cashes cashes,
+                  @Qualifier("dentist") Doctor dentist,
+                  @Qualifier("therapist") Doctor therapist,
+                  @Qualifier("juniorSurgeon") Doctor juniorSurgeon,
+                  @Qualifier("seniorSurgeon") Doctor seniorSurgeon) {
+        this.cashes = cashes;
+        this.dentist = dentist;
+        this.therapist = therapist;
+        this.juniorSurgeon = juniorSurgeon;
+        this.seniorSurgeon = seniorSurgeon;
+    }
+
     public void dentistHeal() {
-        heal(dentist);
+        healing(dentist);
     }
 
     public void therapistHeal() {
-        heal(therapist);
+        healing(therapist);
     }
 
     public void juniorSurgeonHeal() {
-        heal(juniorSurgeon);
+        healing(juniorSurgeon);
     }
 
     public void seniorSurgeonHeal() {
-        heal(seniorSurgeon);
+        healing(seniorSurgeon);
     }
 
-    private void heal(Doctor doctor) {
-        casher.addProfit(doctor.heal());
+    private void healing(Doctor doctor) {
+        BigDecimal price = doctor.heal();
+        cashes.addProfit(price);
     }
 }
