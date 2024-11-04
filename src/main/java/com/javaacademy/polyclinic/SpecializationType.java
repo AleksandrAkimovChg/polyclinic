@@ -1,7 +1,6 @@
 package com.javaacademy.polyclinic;
 
 import lombok.AllArgsConstructor;
-import lombok.ToString;
 
 @AllArgsConstructor
 public enum SpecializationType {
@@ -9,7 +8,7 @@ public enum SpecializationType {
     SURGEON("Хирург"),
     THERAPIST("Терапевт");
 
-    String name;
+    private final String name;
 
     @Override
     public String toString() {

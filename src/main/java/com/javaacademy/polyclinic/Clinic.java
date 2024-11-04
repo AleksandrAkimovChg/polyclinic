@@ -1,6 +1,5 @@
 package com.javaacademy.polyclinic;
 
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -8,11 +7,11 @@ import java.math.BigDecimal;
 
 @Component
 public class Clinic {
-    private Cashes cashes;
-    private Doctor dentist;
-    private Doctor therapist;
-    private Doctor juniorSurgeon;
-    private Doctor seniorSurgeon;
+    private final Cashes cashes;
+    private final Doctor dentist;
+    private final Doctor therapist;
+    private final Doctor juniorSurgeon;
+    private final Doctor seniorSurgeon;
 
     public Clinic(@Qualifier("cashes") Cashes cashes,
                   @Qualifier("dentist") Doctor dentist,
