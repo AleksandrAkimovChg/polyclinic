@@ -3,11 +3,13 @@ package com.javaacademy.polyclinic.config;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.math.BigDecimal;
+
 @ConfigurationProperties(prefix = "price")
 @Data
 public class DoctorProperty {
-    private String dentist;
-    private String therapist;
-    private String juniorSurgeon;
-    private String seniorSurgeon;
+    private BigDecimal dentist;
+    private BigDecimal therapist;
+    private BigDecimal juniorSurgeon;
+    private BigDecimal seniorSurgeon;
 }

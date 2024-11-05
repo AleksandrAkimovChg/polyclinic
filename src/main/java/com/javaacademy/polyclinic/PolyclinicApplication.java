@@ -7,14 +7,14 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class PolyclinicApplication {
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(PolyclinicApplication.class, args);
-		Clinic clinic = context.getBean(Clinic.class);
-		clinic.dentistHeal();
-		clinic.therapistHeal();
-		clinic.juniorSurgeonHeal();
-		clinic.seniorSurgeonHeal();
-		Cashes cashes = context.getBean(Cashes.class);
-		cashes.printProfit();
-	}
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(PolyclinicApplication.class, args);
+        Clinic clinic = context.getBean(Clinic.class);
+        clinic.dentistHeal();
+        clinic.therapistHeal();
+        clinic.juniorSurgeonHeal();
+        clinic.seniorSurgeonHeal();
+        Cashes cashes = context.getBean(Cashes.class);
+        cashes.printProfit();
+    }
 }

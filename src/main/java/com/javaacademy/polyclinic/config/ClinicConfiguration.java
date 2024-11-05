@@ -7,8 +7,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.math.BigDecimal;
-
 @EnableConfigurationProperties(value = DoctorProperty.class)
 @Configuration
 public class ClinicConfiguration {
@@ -25,21 +23,21 @@ public class ClinicConfiguration {
 
     @Bean
     public Doctor dentist() {
-        return new Doctor(new BigDecimal(doctorProperty.getDentist()), SpecializationType.DENTIST);
+        return new Doctor(doctorProperty.getDentist(), SpecializationType.DENTIST);
     }
 
     @Bean
     public Doctor therapist() {
-        return new Doctor(new BigDecimal(doctorProperty.getTherapist()), SpecializationType.THERAPIST);
+        return new Doctor(doctorProperty.getTherapist(), SpecializationType.THERAPIST);
     }
 
     @Bean
     public Doctor juniorSurgeon() {
-        return new Doctor(new BigDecimal(doctorProperty.getJuniorSurgeon()), SpecializationType.SURGEON);
+        return new Doctor(doctorProperty.getJuniorSurgeon(), SpecializationType.SURGEON);
     }
 
     @Bean
     public Doctor seniorSurgeon() {
-        return new Doctor(new BigDecimal(doctorProperty.getSeniorSurgeon()), SpecializationType.SURGEON);
+        return new Doctor(doctorProperty.getSeniorSurgeon(), SpecializationType.SURGEON);
     }
 }
