@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @NoArgsConstructor
 @Slf4j
-public class Cashes {
+public class CashDesk {
     private BigDecimal profit = BigDecimal.ZERO;
 
     public void addProfit(BigDecimal income) {

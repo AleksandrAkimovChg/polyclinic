@@ -14,7 +14,7 @@ public class PolyclinicApplication {
         clinic.therapistHeal();
         clinic.juniorSurgeonHeal();
         clinic.seniorSurgeonHeal();
-        Cashes cashes = context.getBean(Cashes.class);
+        CashDesk cashes = context.getBean(CashDesk.class);
         cashes.printProfit();
     }
 }

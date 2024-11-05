@@ -7,13 +7,13 @@ import java.math.BigDecimal;
 
 @Component
 public class Clinic {
-    private final Cashes cashes;
+    private final CashDesk cashes;
     private final Doctor dentist;
     private final Doctor therapist;
     private final Doctor juniorSurgeon;
     private final Doctor seniorSurgeon;
 
-    public Clinic(@Qualifier("cashes") Cashes cashes,
+    public Clinic(@Qualifier("cashes") CashDesk cashes,
                   @Qualifier("dentist") Doctor dentist,
                   @Qualifier("therapist") Doctor therapist,
                   @Qualifier("juniorSurgeon") Doctor juniorSurgeon,
