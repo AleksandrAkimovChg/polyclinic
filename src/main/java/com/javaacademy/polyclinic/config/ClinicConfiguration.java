@@ -1,6 +1,5 @@
 package com.javaacademy.polyclinic.config;
 
-import com.javaacademy.polyclinic.CashDesk;
 import com.javaacademy.polyclinic.Doctor;
 import com.javaacademy.polyclinic.SpecializationType;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -14,11 +13,6 @@ public class ClinicConfiguration {
 
     public ClinicConfiguration(DoctorProperty doctorProperty) {
         this.doctorProperty = doctorProperty;
-    }
-
-    @Bean
-    public CashDesk cashes() {
-        return new CashDesk();
     }
 
     @Bean
